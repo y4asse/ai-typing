@@ -3,31 +3,13 @@ import { kanaToHira } from '@/utils/kanaToHira'
 import { trimText } from '@/utils/trimText'
 import OpenAI from 'openai'
 
+export const runtime = 'edge'
+
 export async function POST(request: Request) {
   try {
     const body = await request.json()
     const { thema } = body
     const openai = new OpenAI()
-    const tools = [
-      {
-        type: 'function',
-        function: {
-          name: 'get_current_weather',
-          description: 'Get the current weather in a given location',
-          parameters: {
-            type: 'object',
-            properties: {
-              location: {
-                type: 'string',
-                description: 'The city and state, e.g. San Francisco, CA'
-              },
-              unit: { type: 'string', enum: ['celsius', 'fahrenheit'] }
-            },
-            required: ['location']
-          }
-        }
-      }
-    ]
 
     const completion = await openai.chat.completions.create({
       messages: [
