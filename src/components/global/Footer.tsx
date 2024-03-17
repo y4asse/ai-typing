@@ -5,7 +5,7 @@ import Link from 'next/link'
 const Footer = () => {
   return (
     <div className="bg-gray-100 py-10">
-      <WidthContainer>
+      <div className="max-w-[1000px] px-3 mx-auto">
         <div className="flex flex-col gap-2 h-full">
           <Link href="/privacy" className="text-gray-500">
             プライバシーポリシー
@@ -14,7 +14,7 @@ const Footer = () => {
             開発者
           </a>
         </div>
-      </WidthContainer>
+      </div>
       <div className="text-gray-500 text-center mt-10">
         © 2024　
         <a href="https://twitter.com/y4isse" target="_blank" className="underline">

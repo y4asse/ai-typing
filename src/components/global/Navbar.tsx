@@ -34,12 +34,13 @@ const Navbar = () => {
     router.push('/')
   }
   return (
-    <div className="absolute top-0 right-0 w-full bg-white shadow-xl">
+    <div className="absolute top-0 right-0 w-full bg-white shadow-xl h-[70px]">
       <WidthContainer>
         <div className="flex justify-between items-center py-3">
           <div className="flex items-center gap-5">
-            <Logo className="h-16" />
-            <Link href="/">ホーム</Link>
+            <Link href="/">
+              <Logo className="h-10" />
+            </Link>
             <Link href="/ranking">ランキング</Link>
           </div>
           {user !== undefined && (

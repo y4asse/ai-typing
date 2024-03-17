@@ -1,15 +1,16 @@
 'use client'
 
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
+import { set, useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { Input } from '@/components/ui/input'
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { useToast } from '../ui/use-toast'
+import { ReloadIcon } from '@radix-ui/react-icons'
 
 import { Button } from '@/components/ui/button'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { updateProfile, createUserWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '@/firebase/client'
 import { useRouter } from 'next/navigation'
@@ -33,6 +34,7 @@ const FormSchema = z.object({
 const Register = () => {
   const { toast } = useToast()
   const router = useRouter()
+  const [loading, setLoading] = useState(false)
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -45,6 +47,7 @@ const Register = () => {
 
   const onSubmit = async (data: z.infer<typeof FormSchema>) => {
     if (data.password === data.repeatPassword) {
+      setLoading(true)
       await createUserWithEmailAndPassword(auth, data.email, data.password)
         .then((userCredential) => {
           const user = userCredential.user
@@ -98,6 +101,7 @@ const Register = () => {
               })
               break
           }
+          setLoading(false)
         })
     } else {
       toast({
@@ -108,7 +112,9 @@ const Register = () => {
     }
   }
   return (
-    <div className="mb-[150px]">
+    <div className="pb-20">
+      <h1 className="text-xl font-bold">新規登録</h1>
+      <p className="pb-5 text-gray-500">登録情報を入力してください。</p>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormField
@@ -165,8 +171,8 @@ const Register = () => {
           />
 
           <div className="text-end">
-            <Button type="submit" className="font-bold w-full">
-              新規登録
+            <Button type="submit" className="font-bold w-full" disabled={loading}>
+              {loading ? <ReloadIcon className="mr-2 h-4 w-4 animate-spin" /> : '新規登録'}
             </Button>
           </div>
         </form>

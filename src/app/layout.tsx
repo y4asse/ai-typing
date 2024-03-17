@@ -61,11 +61,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       )}
       <FirebaseAuthProvider>
         <body className={sora.className}>
-          <div className="pt-[150px]">
+          <div className="">
             {isMobile && <p className="text-center text-xl font-bold">このアプリはPCでの利用を想定しています。</p>}
             {/* <GlobalMenu /> */}
             <Navbar />
-            <main>{children}</main>
+            {/* 200pxはフッター、70pxはヘッダー */}
+            <main className="min-h-[calc(100vh-200px)] pt-[calc(70px+60px)]">{children}</main>
             <Footer />
           </div>
           <Toaster />

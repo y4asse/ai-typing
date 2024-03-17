@@ -1,5 +1,4 @@
 import Register from '@/components/auth/Register'
-import WidthContainer from '@/components/global/WitdthContainer'
 import React from 'react'
 
 const Page = () => {

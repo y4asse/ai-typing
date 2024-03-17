@@ -8,7 +8,7 @@ import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, Tabl
 export default function Home() {
   return (
     <WidthContainer>
-      <div className="flex items-center px-10 py-[20px]">
+      <div className="flex items-center px-10">
         <div className="w-1/2 text-center">
           <h1 className="text-4xl font-bold text-blue-500">AIが文章を生成するタイピングゲーム</h1>
           <h1 className="text-4xl font-bold text-blue-500 mt-5">新しいタイピングの世界へ飛び込もう！</h1>
