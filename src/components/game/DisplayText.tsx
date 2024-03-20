@@ -18,4 +18,6 @@ const DisplayText = memo(({ textIndex }: { textIndex: number }) => {
   )
 })
 
+DisplayText.displayName = 'DisplayText'
+
 export default DisplayText

@@ -16,4 +16,6 @@ const DisplayHiragana = memo(({ splitSentence, hiraganaIndex }: { splitSentence:
   )
 })
 
+DisplayHiragana.displayName = 'DisplayHiragana'
+
 export default DisplayHiragana

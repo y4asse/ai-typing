@@ -12,4 +12,6 @@ const DisplayRomaji = memo(({ romajiShow, totalInput }: { romajiShow: string; to
   )
 })
 
+DisplayRomaji.displayName = 'DisplayRomaji'
+
 export default DisplayRomaji
