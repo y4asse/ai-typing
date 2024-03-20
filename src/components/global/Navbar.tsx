@@ -34,16 +34,17 @@ const Navbar = () => {
     router.push('/')
   }
   return (
-    <div className="absolute top-0 right-0 w-full bg-white shadow-xl h-[70px]">
+    <div className="absolute top-0 right-0 w-full shadow-xl h-[70px]">
       <WidthContainer>
         <div className="flex justify-between items-center py-3">
           <div className="flex items-center gap-5">
             <Link href="/">
               <Logo className="h-10" />
             </Link>
-            <Link href="/ranking">ランキング</Link>
+            {/* <Link href="/ranking">ランキング</Link> */}
+            <span className="hover:cursor-not-allowed">ランキング（準備中）</span>
           </div>
-          {user !== undefined && (
+          {/* {user !== undefined && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
               {user ? (
                 <DropdownMenu>
@@ -70,7 +71,7 @@ const Navbar = () => {
                 </Button>
               )}
             </motion.div>
-          )}
+          )} */}
         </div>
       </WidthContainer>
     </div>

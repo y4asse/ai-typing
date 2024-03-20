@@ -1,14 +1,15 @@
 import Navbar from '@/components/global/Navbar'
 import './globals.css'
-import { Sora } from 'next/font/google'
+import { Kosugi } from 'next/font/google'
 import Script from 'next/script'
 import { isMobile } from 'react-device-detect'
 import Footer from '@/components/global/Footer'
 import { Toaster as SonnerToaster } from '@/components/ui/sonner'
 import { Toaster } from '@/components/ui/toaster'
 import { FirebaseAuthProvider } from '@/components/provider/FirebaseAuthProvider'
+import { ThemeProvider } from '@/components/provider/theme-provider'
 
-const sora = Sora({ subsets: ['latin'] })
+const kosugi = Kosugi({ subsets: ['latin'], weight: ['400'], display: 'swap' })
 
 export const metadata = {
   title: 'AI Typing 🚀 新世代AIタイピングゲーム!!',
@@ -60,7 +61,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </head>
       )}
       <FirebaseAuthProvider>
-        <body className={sora.className}>
+        {/* <ThemeProvider defaultTheme="system" attribute="class" enableSystem> */}
+        <body className={kosugi.className}>
           <div className="">
             {isMobile && <p className="text-center text-xl font-bold">このアプリはPCでの利用を想定しています。</p>}
             {/* <GlobalMenu /> */}
@@ -72,6 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Toaster />
           <SonnerToaster />
         </body>
+        {/* </ThemeProvider> */}
       </FirebaseAuthProvider>
     </html>
   )
