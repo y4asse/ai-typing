@@ -19,13 +19,20 @@ const Playing = () => {
     timer: TimeMiliSec
   } = useTypingLogic()
   const romajiShow = totalInput + requiredRomaji.join('').substring(totalInput.length)
-  const { score } = game
+  const { score, text } = game
   return (
-    <div className=" whitespace-nowrap">
+    <div className="">
       <div className="absolute top-10 right-1/2 translate-x-1/2 text-xl text-gray-500">テーマ「{game.thema}」</div>
       <div className="absolute top-5 right-5">
         <Score score={score} />
       </div>
+
+      {/* 下の問題の進捗度の線 */}
+      <div
+        style={{ width: `${textIndex * 20}%` }}
+        className={`absolute bottom-0 left-0 h-2 bg-blue-500 duration-200 transition-all`}
+      />
+
       <div className="absolute bottom-10 right-1/2 translate-x-1/2 flex gap-10 justify-center items-center">
         <Timer timeMiliSec={TimeMiliSec} />
         <div>
