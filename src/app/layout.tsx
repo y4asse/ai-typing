@@ -40,6 +40,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
            `
             }}
           />
+          <Script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8973148456811724"
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          ></Script>
           <link
             rel="icon"
             href="https://firebasestorage.googleapis.com/v0/b/cafeteria-fa0bf.appspot.com/o/aikun_0811015123.png?alt=media&token=e1579c8d-400c-408d-8b33-b7ea3a8fb5f7"
