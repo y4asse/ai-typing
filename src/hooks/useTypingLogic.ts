@@ -118,9 +118,9 @@ const useTypingLogic = () => {
             score: prev.score + calcscore,
             missTypeNum: 0,
             typeNum: 0,
-            timer: 0,
             totalTimeMiliSec: prev.totalTimeMiliSec + timer
           }))
+          setTimer(0)
           //打ち始めているかどうかをfalseにする.falseの間はタイマーを止める
           setIsTypeStart(false)
           if (textIndex + 1 > text.length - 1) {

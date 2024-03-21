@@ -43,6 +43,20 @@ const Result = () => {
           </div>
         </div> */}
       </div>
+      <div className="flex justify-center items-center mt-5 text-xl gap-10">
+        <div>
+          <span>タイム：</span>
+          <span className="font-bold text-blue-500">{(totalTimeMiliSec / 1000).toFixed(0)}秒</span>
+        </div>
+        <div>
+          <span>タイプ数：</span>
+          <span className="font-bold text-blue-500">{game.totalTypeNum}</span>
+        </div>
+        <div>
+          <span>ミスタイプ数：</span>
+          <span className="font-bold text-red-500">{game.totalMissTypeNum}</span>
+        </div>
+      </div>
       <div className="flex justify-center gap-10 mt-10">
         <Button onClick={() => setGame((prev) => ({ ...defaultGameState, thema: prev.thema, status: 'input' }))}>
           もう一度(Esc)
