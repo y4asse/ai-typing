@@ -22,7 +22,7 @@ const Page = () => {
   return (
     <div className="pb-20">
       <WidthContainer>
-        <div className="flex max-md:flex-col justify-evenly">
+        <div className="flex max-md:flex-col">
           <div className="relative w-[60%] max-md:w-full aspect-video border border-blue-100 shadow-xl rounded-xl p-5 flex justify-center items-center flex-col gap-10">
             {game.status === 'result' ? (
               <Result />
@@ -33,9 +33,6 @@ const Page = () => {
             ) : (
               <Thema />
             )}
-          </div>
-          <div className="w-[30%] max-md:w-full p-3 border rounded-xl flex justify-center items-center text-2xl font-bold">
-            準備中
           </div>
         </div>
       </WidthContainer>
