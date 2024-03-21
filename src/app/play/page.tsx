@@ -8,6 +8,7 @@ import Playing from '@/components/game/Playing'
 import Result from '@/components/game/Result'
 import Thema from '@/components/game/Thema'
 import Created from '@/components/game/Created'
+import GoogleAdsense from '@/components/googleAdsense/GoogleAdsense'
 
 const Page = () => {
   const [game, setGame] = useAtom(gameAtom)
@@ -22,8 +23,8 @@ const Page = () => {
   return (
     <div className="pb-20">
       <WidthContainer>
-        <div className="flex max-md:flex-col">
-          <div className="relative w-[60%] max-md:w-full aspect-video border border-blue-100 shadow-xl rounded-xl p-5 flex justify-center items-center flex-col gap-10">
+        <div className="flex max-md:flex-col justify-center">
+          <div className="relative mr-5 w-[60%] max-md:w-full aspect-video border border-blue-100 shadow-xl rounded-xl p-5 flex justify-center items-center flex-col gap-10">
             {game.status === 'result' ? (
               <Result />
             ) : game.status === 'playing' ? (
@@ -33,6 +34,9 @@ const Page = () => {
             ) : (
               <Thema />
             )}
+          </div>
+          <div className="border w-[30%]">
+            <GoogleAdsense client="ca-pub-8973148456811724" slot="7919579317" style={{ display: 'block' }} />
           </div>
         </div>
       </WidthContainer>
