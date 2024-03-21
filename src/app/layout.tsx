@@ -58,6 +58,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@yAisse" />
+
+          {/* Google ad */}
+          <meta name="google-adsense-account" content="ca-pub-8973148456811724" />
         </head>
       )}
       <FirebaseAuthProvider>
