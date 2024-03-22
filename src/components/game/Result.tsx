@@ -37,7 +37,11 @@ const Result = () => {
       setGame((prev) => ({ ...defaultGameState, thema: prev.thema, status: 'input' }))
     }
   }
-  const text = encodeURIComponent(`AI Typingをプレイしました！🚀\nテーマ🔥「${thema}」\nスコア📃「${score}」点\n\n`)
+  const text = encodeURIComponent(
+    `AI Typingをプレイしました！🚀\nテーマ🔥「${thema}」\nスコア📃「${score}」点\nタイプ数「${totalTypeNum}」\nミスタイプ数「${totalMissTypeNum}」\n入力時間「${
+      totalTimeMiliSec / 1000
+    }」秒\n\n`
+  )
   const hashtags = encodeURIComponent('AItyping')
   const url = encodeURIComponent('https://ai-typing.app\n')
   useEffect(() => {
@@ -61,7 +65,7 @@ const Result = () => {
     <div className="text-center w-full">
       <div className="text-2xl font-bold animate-bounce">終了</div>
       <div className="text-gray-600 text-3xl font-bold mt-1">「{game.thema}」</div>
-      <div className="flex gap-10 justify-center mt-5">
+      <div className="flex gap-10 justify-center items-center mt-5 max-md:flex-col">
         <div className="rounded-full shadow w-[200px] h-[200px] border border-gray-300 flex flex-col justify-center items-center gap-3">
           <div className="text-xl text-gray-500">得点</div>
           <div className="text-4xl">
@@ -71,7 +75,9 @@ const Result = () => {
         </div>
         <div className="rounded-full shadow w-[200px] h-[200px] border border-gray-300 flex flex-col justify-center items-center gap-3">
           <div className="text-xl text-gray-500">順位</div>
-          {mutation.isSuccess ? (
+          {mutation.isError ? (
+            <div className="text-lg text-red-500">エラーが発生しました</div>
+          ) : mutation.isSuccess ? (
             <div>
               <span className="text-orange-500 font-bold text-4xl">{mutation.data.ranking}</span>
               <span className="ml-2 text-sm">位</span>
@@ -84,7 +90,7 @@ const Result = () => {
           )}
         </div>
       </div>
-      <div className="flex justify-center items-center mt-5 text-xl gap-10">
+      <div className="flex justify-center items-center mt-5 text-xl gap-10 max-md:flex-col">
         <div>
           <span>タイム：</span>
           <span className="font-bold text-blue-500">{(totalTimeMiliSec / 1000).toFixed(0)}秒</span>
