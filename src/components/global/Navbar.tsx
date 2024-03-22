@@ -41,8 +41,9 @@ const Navbar = () => {
             <Link href="/">
               <Logo className="h-10 max-md:h-7" />
             </Link>
-            {/* <Link href="/ranking">ランキング</Link> */}
-            <span className="hover:cursor-not-allowed max-md:text-sm">ランキング（準備中）</span>
+            <Link href="/ranking" className="max-md:text-sm">
+              ランキング
+            </Link>
           </div>
           {user !== undefined && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
