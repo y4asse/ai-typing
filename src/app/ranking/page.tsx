@@ -35,9 +35,9 @@ const Page = () => {
                   const displayJst = jst.replace(/:\d{2}$/, '') // $は末尾を表す
                   if (index === 0)
                     return (
-                      <TableBody key={index} className="bg-gray-100 text-3xl font-bold text-yellow-400">
+                      <TableBody key={index} className="bg-gray-100 text-3xl font-bold ">
                         <TableRow>
-                          <TableCell className="w-1/4">{index + 1}位</TableCell>
+                          <TableCell className="w-1/4 text-yellow-400">{index + 1}位</TableCell>
                           <TableCell className="w-1/4">{data.user_name ?? '名無し'}</TableCell>
                           <TableCell className="w-1/4">{data.score} 点</TableCell>
                           <TableCell className="w-1/4">{displayJst}</TableCell>
@@ -46,9 +46,9 @@ const Page = () => {
                     )
                   if (index === 1)
                     return (
-                      <TableBody key={index} className="bg-gray-100 text-2xl font-semibold text-gray-500">
+                      <TableBody key={index} className="bg-gray-100 text-2xl font-semibold ">
                         <TableRow>
-                          <TableCell className="w-1/4 ">{index + 1}位</TableCell>
+                          <TableCell className="w-1/4 text-gray-500">{index + 1}位</TableCell>
                           <TableCell className="w-1/4">{data.user_name ?? '名無し'}</TableCell>
                           <TableCell className="w-1/4">{data.score} 点</TableCell>
                           <TableCell className="w-1/4">{displayJst}</TableCell>
@@ -57,9 +57,9 @@ const Page = () => {
                     )
                   if (index === 2)
                     return (
-                      <TableBody key={index} className="bg-gray-100 text-2xl font-semibold text-orange-800">
+                      <TableBody key={index} className="bg-gray-100 text-2xl font-semibold ">
                         <TableRow>
-                          <TableCell className="w-1/4">{index + 1}位</TableCell>
+                          <TableCell className="w-1/4 text-orange-800">{index + 1}位</TableCell>
                           <TableCell className="w-1/4">{data.user_name ?? '名無し'}</TableCell>
                           <TableCell className="w-1/4">{data.score} 点</TableCell>
                           <TableCell className="w-1/4">{displayJst}</TableCell>
