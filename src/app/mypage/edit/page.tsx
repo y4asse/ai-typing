@@ -147,7 +147,7 @@ const Page = () => {
                   <FormItem>
                     <FormLabel>名前</FormLabel>
                     <FormControl>
-                      <Input placeholder="新しい名前を入力..." defaultValue={user.displayName} {...field} />
+                      <Input placeholder="新しい名前を入力..." {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
