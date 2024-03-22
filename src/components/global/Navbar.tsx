@@ -44,7 +44,7 @@ const Navbar = () => {
             {/* <Link href="/ranking">ランキング</Link> */}
             <span className="hover:cursor-not-allowed">ランキング（準備中）</span>
           </div>
-          {/* {user !== undefined && (
+          {user !== undefined && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
               {user ? (
                 <DropdownMenu>
@@ -59,9 +59,6 @@ const Navbar = () => {
                   <DropdownMenuContent>
                     <DropdownMenuLabel>{user.displayName}</DropdownMenuLabel>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem>Profile</DropdownMenuItem>
-                    <DropdownMenuItem>Billing</DropdownMenuItem>
-                    <DropdownMenuItem>Team</DropdownMenuItem>
                     <DropdownMenuItem onClick={handleSignOut}>ログアウト</DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
@@ -71,7 +68,7 @@ const Navbar = () => {
                 </Button>
               )}
             </motion.div>
-          )} */}
+          )}
         </div>
       </WidthContainer>
     </div>
