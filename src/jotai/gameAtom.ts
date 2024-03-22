@@ -19,7 +19,6 @@ export const defaultGameState = {
   detail: 'についての文章',
   disableRanking: false,
   rankingCount: 0,
-  rank: 0,
   batches: [], //TODO
   sound: true
 }

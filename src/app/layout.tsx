@@ -8,6 +8,7 @@ import { Toaster as SonnerToaster } from '@/components/ui/sonner'
 import { Toaster } from '@/components/ui/toaster'
 import { FirebaseAuthProvider } from '@/components/provider/FirebaseAuthProvider'
 import { ThemeProvider } from '@/components/provider/theme-provider'
+import QueryProvider from '@/components/provider/QueryClientProvider'
 
 const kosugi = Kosugi({ subsets: ['latin'], weight: ['400'], display: 'swap' })
 
@@ -70,20 +71,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </head>
       )}
       <FirebaseAuthProvider>
-        {/* <ThemeProvider defaultTheme="system" attribute="class" enableSystem> */}
-        <body className={kosugi.className}>
-          <div className="">
-            {isMobile && <p className="text-center text-xl font-bold">このアプリはPCでの利用を想定しています。</p>}
-            {/* <GlobalMenu /> */}
-            <Navbar />
-            {/* 200pxはフッター、70pxはヘッダー */}
-            <main className="min-h-[calc(100vh-200px)] pt-[calc(70px+60px)]">{children}</main>
-            <Footer />
-          </div>
-          <Toaster />
-          <SonnerToaster />
-        </body>
-        {/* </ThemeProvider> */}
+        <QueryProvider>
+          {/* <ThemeProvider defaultTheme="system" attribute="class" enableSystem> */}
+          <body className={kosugi.className}>
+            <div className="">
+              {isMobile && <p className="text-center text-xl font-bold">このアプリはPCでの利用を想定しています。</p>}
+              {/* <GlobalMenu /> */}
+              <Navbar />
+              {/* 200pxはフッター、70pxはヘッダー */}
+              <main className="min-h-[calc(100vh-200px)] pt-[calc(70px+60px)]">{children}</main>
+              <Footer />
+            </div>
+            <Toaster />
+            <SonnerToaster />
+          </body>
+          {/* </ThemeProvider> */}
+        </QueryProvider>
       </FirebaseAuthProvider>
     </html>
   )
