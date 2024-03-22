@@ -60,6 +60,9 @@ const Navbar = () => {
                   <DropdownMenuContent>
                     <DropdownMenuLabel>{user.displayName}</DropdownMenuLabel>
                     <DropdownMenuSeparator />
+                    <DropdownMenuItem asChild>
+                      <Link href={`/mypage/edit`}>プロフィール</Link>
+                    </DropdownMenuItem>
                     <DropdownMenuItem onClick={handleSignOut}>ログアウト</DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
