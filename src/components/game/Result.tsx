@@ -47,7 +47,7 @@ const Result = () => {
       total_time_mili_sec: totalTimeMiliSec,
       total_key_count: totalTypeNum,
       total_miss_type: totalMissTypeNum,
-      user_id: null,
+      user_id: user ? user.uid : null,
       miss_type_key_set: missTypeKey.map((miss) => `${miss.wanted_key},${miss.inputed_key}`)
     })
 
@@ -56,20 +56,6 @@ const Result = () => {
       window.removeEventListener('keydown', handleKeydown)
     }
   }, [])
-
-  useEffect(() => {
-    if (user !== undefined) {
-      mutation.mutate({
-        inputed_thema: thema,
-        score: score,
-        total_time_mili_sec: totalTimeMiliSec,
-        total_key_count: totalTypeNum,
-        total_miss_type: totalMissTypeNum,
-        user_id: user ? user.uid : null,
-        miss_type_key_set: missTypeKey.map((miss) => `${miss.wanted_key},${miss.inputed_key}`)
-      })
-    }
-  }, [user])
 
   return (
     <div className="text-center w-full">
