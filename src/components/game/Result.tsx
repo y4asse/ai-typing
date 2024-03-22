@@ -6,6 +6,7 @@ import React, { useEffect } from 'react'
 import { Button } from '../ui/button'
 import { FaXTwitter } from 'react-icons/fa6'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { useAuth } from '../provider/FirebaseAuthProvider'
 
 const postGame = async (game: any) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/game`, {
@@ -21,13 +22,13 @@ const postGame = async (game: any) => {
 
 const Result = () => {
   const queryClient = useQueryClient()
-
   const mutation = useMutation({
     mutationFn: postGame,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['games'] })
     }
   })
+  const user = useAuth()
   const [game, setGame] = useAtom(gameAtom)
   const { thema, score, totalTimeMiliSec, totalTypeNum, totalMissTypeNum, missTypeKey } = game
   const handleKeydown = (e: KeyboardEvent) => {
@@ -55,6 +56,20 @@ const Result = () => {
       window.removeEventListener('keydown', handleKeydown)
     }
   }, [])
+
+  useEffect(() => {
+    if (user !== undefined) {
+      mutation.mutate({
+        inputed_thema: thema,
+        score: score,
+        total_time_mili_sec: totalTimeMiliSec,
+        total_key_count: totalTypeNum,
+        total_miss_type: totalMissTypeNum,
+        user_id: user ? user.uid : null,
+        miss_type_key_set: missTypeKey.map((miss) => `${miss.wanted_key},${miss.inputed_key}`)
+      })
+    }
+  }, [user])
 
   return (
     <div className="text-center w-full">
@@ -94,7 +109,7 @@ const Result = () => {
         </div>
         <div>
           <span>ミスタイプ数：</span>
-          <span className="font-bold text-red-500">{game.totalMissTypeNum}</span>
+          <span className="font-bold text-blue-500">{game.totalMissTypeNum}</span>
         </div>
       </div>
       <div className="flex justify-center gap-10 mt-10">
