@@ -23,7 +23,7 @@ const Page = () => {
   return (
     <div className="pb-20">
       <WidthContainer>
-        <div className="flex max-md:flex-col justify-center">
+        <div className="flex max-md:flex-col max-md:gap-10 justify-center">
           <div className="relative mr-5 w-[60%] max-md:w-full aspect-video border border-blue-100 shadow-xl rounded-xl p-5 flex justify-center items-center flex-col gap-10">
             {game.status === 'result' ? (
               <Result />
@@ -35,9 +35,9 @@ const Page = () => {
               <Thema />
             )}
           </div>
-          <div className="border w-[30%]">
+          {/* <div className="border w-[30%]">
             <GoogleAdsense client="ca-pub-8973148456811724" slot="7919579317" style={{ display: 'block' }} />
-          </div>
+          </div> */}
         </div>
       </WidthContainer>
     </div>

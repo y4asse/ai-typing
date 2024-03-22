@@ -8,8 +8,8 @@ import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, Tabl
 export default function Home() {
   return (
     <WidthContainer>
-      <div className="flex items-center px-10">
-        <div className="w-1/2 text-center">
+      <div className="flex items-center md:px-10 max-md:flex-col max-md:gap-20">
+        <div className="w-1/2 text-center max-md:w-full">
           <h1 className="text-4xl font-bold text-blue-500">AIが文章を生成するタイピングゲーム</h1>
           <h1 className="text-4xl font-bold text-blue-500 mt-5">新しいタイピングの世界へ飛び込もう！</h1>
           <p className="text-lg text-gray-500 mt-10">
@@ -21,10 +21,10 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <div className="w-1/2 text-center">
+        <div className="w-1/2 text-center max-md:w-full">
           <Logo className="mx-auto w-[500px]" />
           <div className="text-end text-xl text-gray-500">新世代タイピングゲーム🚀</div>
-          <TypingAnimation className="w-[400px] h-[400px] mx-auto rounded-full" />
+          <TypingAnimation className="w-[400px] h-[400px] mx-auto rounded-full max-md:w-[300px]" />
         </div>
       </div>
       <div>

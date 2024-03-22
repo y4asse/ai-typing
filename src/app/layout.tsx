@@ -2,7 +2,6 @@ import Navbar from '@/components/global/Navbar'
 import './globals.css'
 import { Kosugi } from 'next/font/google'
 import Script from 'next/script'
-import { isMobile } from 'react-device-detect'
 import Footer from '@/components/global/Footer'
 import { Toaster as SonnerToaster } from '@/components/ui/sonner'
 import { Toaster } from '@/components/ui/toaster'
@@ -75,11 +74,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {/* <ThemeProvider defaultTheme="system" attribute="class" enableSystem> */}
           <body className={kosugi.className}>
             <div className="">
-              {isMobile && <p className="text-center text-xl font-bold">このアプリはPCでの利用を想定しています。</p>}
               {/* <GlobalMenu /> */}
               <Navbar />
               {/* 200pxはフッター、70pxはヘッダー */}
-              <main className="min-h-[calc(100vh-200px)] pt-[calc(70px+60px)]">{children}</main>
+              <main className="min-h-[calc(100vh-200px)] pt-[calc(70px+60px)]">
+                <p className="text-center text-red-500 pb-10 text-lg font-bold block md:hidden">
+                  このアプリはPCでの利用を想定しています。
+                </p>
+
+                {children}
+              </main>
               <Footer />
             </div>
             <Toaster />

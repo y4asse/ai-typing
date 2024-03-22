@@ -37,12 +37,12 @@ const Navbar = () => {
     <div className="absolute top-0 right-0 w-full shadow-xl h-[70px]">
       <WidthContainer>
         <div className="flex justify-between items-center py-3">
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-5 max-md:gap-1">
             <Link href="/">
-              <Logo className="h-10" />
+              <Logo className="h-10 max-md:h-7" />
             </Link>
             {/* <Link href="/ranking">ランキング</Link> */}
-            <span className="hover:cursor-not-allowed">ランキング（準備中）</span>
+            <span className="hover:cursor-not-allowed max-md:text-sm">ランキング（準備中）</span>
           </div>
           {user !== undefined && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
