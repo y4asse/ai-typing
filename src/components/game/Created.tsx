@@ -1,6 +1,7 @@
 import { gameAtom } from '@/jotai/gameAtom'
 import { useAtom } from 'jotai'
 import React, { useEffect } from 'react'
+import { Button } from '../ui/button'
 
 const Created = () => {
   const [game, setGame] = useAtom(gameAtom)
@@ -16,11 +17,18 @@ const Created = () => {
       window.removeEventListener('keydown', handleKeyDown)
     }
   }, [handleKeyDown])
+
+  const handleClick = () => {
+    setGame((prev) => ({ ...prev, status: 'playing' }))
+  }
   return (
     <div className="text-center">
       <div className="text-2xl font-bold">生成が完了しました</div>
       <div className="text-2xl font-bold">スペースかエンターを押してゲームを開始します</div>
       <div className="text-gray-500 text-xl mt-5 animate-pulse">Press enter or space</div>
+      <div className="mt-5 md:hidden">
+        <Button onClick={handleClick}>スタート</Button>
+      </div>
     </div>
   )
 }

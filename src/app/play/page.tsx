@@ -24,7 +24,7 @@ const Page = () => {
     <div className="pb-20">
       <WidthContainer>
         <div className="flex max-md:flex-col max-md:gap-10 justify-center">
-          <div className="relative mr-5 w-[60%] max-md:w-full aspect-video border border-blue-100 shadow-xl rounded-xl p-5 flex justify-center items-center flex-col gap-10">
+          <div className="relative w-[900px] max-md:w-full aspect-video border border-blue-100 shadow-xl rounded-xl p-5 flex justify-center items-center flex-col gap-10">
             {game.status === 'result' ? (
               <Result />
             ) : game.status === 'playing' ? (

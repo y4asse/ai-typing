@@ -21,9 +21,9 @@ const Playing = () => {
   const romajiShow = totalInput + requiredRomaji.join('').substring(totalInput.length)
   const { score, text } = game
   return (
-    <div className="">
+    <div className="max-md:pt-20">
       <div className="absolute top-10 right-1/2 translate-x-1/2 text-xl text-gray-500">テーマ「{game.thema}」</div>
-      <div className="absolute top-5 right-5">
+      <div className="absolute top-5 right-5 max-md:hidden">
         <Score score={score} />
       </div>
 
@@ -33,7 +33,7 @@ const Playing = () => {
         className={`absolute bottom-0 left-0 h-2 bg-blue-500 duration-200 transition-all`}
       />
 
-      <div className="absolute bottom-10 right-1/2 translate-x-1/2 flex gap-10 justify-center items-center">
+      <div className="absolute bottom-10 right-1/2 translate-x-1/2 flex gap-10 justify-center items-center max-md:hidden">
         <Timer timeMiliSec={TimeMiliSec} />
         <div>
           <span className="mr-2">タイプ数</span>
