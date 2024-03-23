@@ -60,7 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <meta property="og:site_name" content="AI Typing" />
           <meta
             property="og:image"
-            content="https://firebasestorage.googleapis.com/v0/b/cafeteria-fa0bf.appspot.com/o/ai-typin.png?alt=media&token=d29bd47b-d5ba-46bb-bb18-5ab20c255010"
+            content="https://firebasestorage.googleapis.com/v0/b/ai-typing-c06b9.appspot.com/o/ogImage.png?alt=media&token=cb7458bf-6d85-428a-a3bf-4c697648e265"
           />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@yAisse" />

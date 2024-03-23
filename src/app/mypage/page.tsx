@@ -36,8 +36,14 @@ const Page = () => {
             alt="ユーザアイコン"
             className="w-[100px] h-[100px] rounded-full border"
           />
-          <div className="mt-10 text-xl font-bold">{user?.displayName}</div>
+          <div className="mt-5 text-xl font-bold">{user?.displayName}</div>
+          <div className="mt-10">
+            <Button asChild>
+              <Link href={`/mypage/edit`}>プロフィールを編集</Link>
+            </Button>
+          </div>
         </div>
+        <hr className="w-full mx-auto my-10" />
       </WidthContainer>
     </div>
   )
