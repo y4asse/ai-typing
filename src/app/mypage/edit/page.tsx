@@ -102,7 +102,7 @@ const Page = () => {
   }
 
   return (
-    <div>
+    <div className="pb-10">
       <WidthContainer>
         <div className="text-center font-bold text-3xl">プロフィールを編集</div>
         <div className="flex flex-col justify-center items-center">

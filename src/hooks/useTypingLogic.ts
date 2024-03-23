@@ -36,6 +36,13 @@ const useTypingLogic = () => {
     }
   }
 
+  useEffect(() => {
+    // preload sound
+    new Audio(`/sound/correct.mp3`)
+    new Audio(`/sound/miss.mp3`)
+    new Audio(`/sound/type.mp3`)
+  }, [])
+
   //   constructTypeSentenceCallbackがtextindexに依存してるので，set関数もtextindexに依存させる
   useEffect(() => {
     setRomajiCandidates(constructTypeSentenceCallback().romajiCandidates)
