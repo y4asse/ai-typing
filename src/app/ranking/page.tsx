@@ -19,7 +19,7 @@ const getRanking = async () => {
 const Page = () => {
   const query = useQuery({ queryKey: ['ranking'], queryFn: getRanking })
   return (
-    <div>
+    <div className="pb-10">
       <WidthContainer>
         <h1 className="text-3xl text-center">ランキングTOP10</h1>
         <div className="my-10">
