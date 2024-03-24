@@ -46,8 +46,7 @@ Keystrokes ⌨️: ${totalTypeNum}
 Typos 🤦‍♂️: ${totalMissTypeNum}
 Time ⏰: ${totalTimeMiliSec / 1000} seconds
 
-Challenge your friends to beat your score! 💪
-Play now at https://ai-typing.vercel.app/ 🎮`
+Challenge your friends to beat your score! 💪`
   )
 
   const hashtags = encodeURIComponent('AItyping')
