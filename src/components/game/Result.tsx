@@ -43,7 +43,7 @@ const Result = () => {
       totalTimeMiliSec / 1000
     }」秒\n\n`
   )
-  const hashtags = encodeURIComponent('AItyping')
+  const hashtags = encodeURIComponent('AITyping')
   const url = encodeURIComponent('https://ai-typing.app\n')
   useEffect(() => {
     mutation.mutate({

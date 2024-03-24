@@ -49,7 +49,7 @@ Time ⏰: ${totalTimeMiliSec / 1000} seconds
 Challenge your friends to beat your score! 💪`
   )
 
-  const hashtags = encodeURIComponent('AItyping')
+  const hashtags = encodeURIComponent('AITyping')
   const url = encodeURIComponent('https://ai-typing.app/en\n')
   useEffect(() => {
     mutation.mutate({
