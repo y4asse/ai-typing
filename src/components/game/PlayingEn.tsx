@@ -44,14 +44,9 @@ const Playing = () => {
           <span className="mr-2">Typos</span> <span className="text-3xl text-red-500">{game.missTypeNum}</span>{' '}
         </div>
       </div>
-      {/* 文章の表示 */}
-      <DisplayText textIndex={textIndex} className={`${isMissFlash && 'text-red-500'}`} />
 
       {/* ひらがなの表示 */}
       <DisplayHiragana splitSentence={splitSentence} hiraganaIndex={hiraganaIndex} />
-
-      {/* ローマ字の表示 */}
-      <DisplayRomaji romajiShow={romajiShow} totalInput={totalInput} />
     </div>
   )
 }

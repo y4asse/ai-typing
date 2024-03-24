@@ -42,7 +42,7 @@ const Thema = () => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ thema: game.thema, model: 'gpt-3.5-turbo' }),
+        body: JSON.stringify({ thema: game.thema, model: 'gpt-3.5-turbo', lang: 'en' }),
         cache: 'no-cache'
       })
       if (!res.ok) {
