@@ -70,7 +70,7 @@ Challenge your friends to beat your score! 💪`
 
   return (
     <div className="text-center w-full">
-      <div className="text-2xl font-bold animate-bounce">Finish!</div>
+      <div className="text-2xl font-bold animate-bounce">Finished!</div>
       <div className="text-gray-600 text-3xl font-bold mt-1">「{game.thema}」</div>
       <div className="flex gap-10 justify-center items-center mt-5 max-md:flex-col">
         <div className="rounded-full shadow w-[200px] h-[200px] border border-gray-300 flex flex-col justify-center items-center gap-3">
