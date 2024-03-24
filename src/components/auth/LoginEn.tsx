@@ -152,7 +152,7 @@ const LoginEn = () => {
       </Form>
       <hr className="my-5" />
       <p className="text-center">
-        Don't have an account?{' '}
+        Don't have an account?
         <Link className="underline text-blue-500" href={`/register`}>
           Register
         </Link>
