@@ -44,10 +44,11 @@ export function middleware(request: NextRequest) {
   const locale = getLocale(request)
 
   // Check if the request is from Japan
-  const isFromJapan = locale === 'ja'
+  // const isFromJapan = locale === 'ja'
+  const isFromEn = locale === 'en'
 
   // Redirect to /en if the request is not from Japan
-  if (!isFromJapan && !pathname.startsWith('/en')) {
+  if (isFromEn && !pathname.startsWith('/en')) {
     return NextResponse.redirect(new URL(`/en${pathname}`, request.url))
   }
 }
