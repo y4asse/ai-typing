@@ -18,6 +18,11 @@ const Footer = () => {
             </Link>
           </div>
           <div>
+            <Link href="/about/play" className="">
+              遊び方
+            </Link>
+          </div>
+          <div>
             <a href="https://twitter.com/y4isse" target="_blank">
               開発者
             </a>
