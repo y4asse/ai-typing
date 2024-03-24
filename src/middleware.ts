@@ -21,6 +21,11 @@ function getLocale(request: NextRequest): string | undefined {
   return locale
 }
 
+function isBot(request: NextRequest): boolean {
+  const userAgent = request.headers.get('User-Agent')
+  return userAgent?.toLowerCase().includes('bot') || false
+}
+
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
@@ -46,6 +51,10 @@ export function middleware(request: NextRequest) {
   // Check if the request is from Japan
   // const isFromJapan = locale === 'ja'
   const isFromEn = locale === 'en'
+
+  if (isBot(request)) {
+    return
+  }
 
   // Redirect to /en if the request is not from Japan
   if (isFromEn && !pathname.startsWith('/en')) {
