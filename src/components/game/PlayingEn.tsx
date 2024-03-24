@@ -21,7 +21,7 @@ const Playing = () => {
   const romajiShow = totalInput + requiredRomaji.join('').substring(totalInput.length)
   const { score, text } = game
   return (
-    <div className="max-md:pt-20">
+    <div className="max-md:pt-20 whitespace-normal">
       <div className="absolute top-10 right-1/2 translate-x-1/2 text-xl text-gray-500">「{game.thema}」</div>
       <div className="absolute top-5 right-5 max-md:hidden">
         <Score score={score} />
