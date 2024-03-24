@@ -10,8 +10,10 @@ const Page = () => {
           <div>
             <Logo className="mx-auto" />
             <p className="text-xl my-12 md:max-w-3xl">
-              AI
-              Typingは、文章作成AIを駆使した革新的なタイピングゲームです。ユーザーが入力したテーマに基づいて、AIが唯一無二の文章を生成。あなただけのオリジナル文章でタイピング練習ができます。初心者から上級者まで、楽しみながらスキルアップを目指せる、新世代のタイピングアプリです。
+              AI Typing is an innovative typing game that harnesses the power of AI-driven text generation. Based on the
+              theme provided by the user, the AI creates unique, one-of-a-kind passages. Practice typing with your own
+              original content, tailored just for you. From beginners to advanced typists, this next-generation typing
+              app offers an enjoyable way to improve your skills.
             </p>
           </div>
           <TypingAnimation className="w-[500px]" />
@@ -19,7 +21,7 @@ const Page = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h2 className="text-2xl font-bold mb-4 text-indigo-600">特徴</h2>
+            <h2 className="text-2xl font-bold mb-4 text-indigo-600">Features</h2>
             <ul className="space-y-4">
               <li className="flex items-center">
                 <svg
@@ -36,7 +38,7 @@ const Page = () => {
                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                <span>AIによるオリジナル文章生成</span>
+                <span>AI-generated original passages</span>
               </li>
               <li className="flex items-center">
                 <svg
@@ -53,7 +55,7 @@ const Page = () => {
                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                <span>ランキング機能</span>
+                <span>Ranking system</span>
               </li>
               <li className="flex items-center">
                 <svg
@@ -70,7 +72,7 @@ const Page = () => {
                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                <span>タイピングスピードと正確性の測定</span>
+                <span>Typing speed and accuracy measurement</span>
               </li>
               <li className="flex items-center">
                 <svg
@@ -87,13 +89,13 @@ const Page = () => {
                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                <span>どんなテーマにも対応</span>
+                <span>Adaptable to any theme</span>
               </li>
             </ul>
           </div>
 
           <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h2 className="text-2xl font-bold mb-4 text-indigo-600">AIによる文章生成の利点</h2>
+            <h2 className="text-2xl font-bold mb-4 text-indigo-600">Benefits of AI-generated content</h2>
             <ul className="space-y-4">
               <li className="flex items-center">
                 <svg
@@ -105,7 +107,7 @@ const Page = () => {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                <span>常に新鮮で多様な文章</span>
+                <span>Always fresh and diverse passages</span>
               </li>
               <li className="flex items-center">
                 <svg
@@ -117,7 +119,7 @@ const Page = () => {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                <span>ユーザーの興味に合わせたパーソナライズ</span>
+                <span>Personalized to the user's interests</span>
               </li>
               <li className="flex items-center">
                 <svg
@@ -129,7 +131,7 @@ const Page = () => {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                <span>語彙力と文章力の向上</span>
+                <span>Improves vocabulary and writing skills</span>
               </li>
               <li className="flex items-center">
                 <svg
@@ -141,7 +143,7 @@ const Page = () => {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                <span>飽きずに長期的な練習が可能</span>
+                <span>Enables long-term practice without boredom</span>
               </li>
             </ul>
           </div>
@@ -152,7 +154,7 @@ const Page = () => {
             href="/play"
             className="bg-white text-indigo-600 font-bold py-4 px-8 rounded-full shadow-lg hover:bg-indigo-50 transition duration-300"
           >
-            今すぐ始める
+            Get Started Now
           </Link>
         </div>
       </div>
