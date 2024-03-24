@@ -1,4 +1,5 @@
 import React from 'react'
+export const runtime = 'edge'
 
 const Page = ({ params }: { params: { slug: string } }) => {
   console.log(params.slug)
