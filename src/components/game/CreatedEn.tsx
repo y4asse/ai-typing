@@ -23,11 +23,11 @@ const Created = () => {
   }
   return (
     <div className="text-center">
-      <div className="text-2xl font-bold">生成が完了しました</div>
-      <div className="text-2xl font-bold">スペースかエンターを押してゲームを開始します</div>
-      <div className="text-gray-500 text-xl mt-5 animate-pulse">Press enter or space</div>
+      <div className="text-2xl font-bold">Generation complete!</div>
+      <div className="text-2xl font-bold">Press enter or space to start.</div>
+      <div className="text-gray-500 text-xl mt-5 animate-pulse">Press enter or space.</div>
       <div className="mt-5 md:hidden">
-        <Button onClick={handleClick}>スタート</Button>
+        <Button onClick={handleClick}>Start</Button>
       </div>
     </div>
   )

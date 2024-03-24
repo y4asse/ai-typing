@@ -4,10 +4,9 @@ import WidthContainer from '@/components/global/WitdthContainer'
 import { defaultGameState, gameAtom } from '@/jotai/gameAtom'
 import { useAtom } from 'jotai'
 import { useEffect } from 'react'
-import Playing from '@/components/game/Playing'
-import Thema from '@/components/game/Thema'
-import Created from '@/components/game/Created'
-import GoogleAdsense from '@/components/googleAdsense/GoogleAdsense'
+import PlayingEn from '@/components/game/PlayingEn'
+import ThemaEn from '@/components/game/ThemaEn'
+import CreatedEn from '@/components/game/CreatedEn'
 import ResultEn from '@/components/game/ResultEn'
 
 const Page = () => {
@@ -28,16 +27,13 @@ const Page = () => {
             {game.status === 'result' ? (
               <ResultEn />
             ) : game.status === 'playing' ? (
-              <Playing />
+              <PlayingEn />
             ) : game.status === 'created' ? (
-              <Created />
+              <CreatedEn />
             ) : (
-              <Thema />
+              <ThemaEn />
             )}
           </div>
-          {/* <div className="border w-[30%]">
-            <GoogleAdsense client="ca-pub-8973148456811724" slot="7919579317" style={{ display: 'block' }} />
-          </div> */}
         </div>
       </WidthContainer>
     </div>

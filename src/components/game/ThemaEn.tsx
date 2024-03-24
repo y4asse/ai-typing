@@ -19,7 +19,7 @@ const Thema = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (game.status === 'creating') return
     if (e.target.value.length > 25) {
-      setErrorMessages('テーマは25文字以内で入力してください')
+      setErrorMessages('Please enter a theme using 25 characters or less')
     } else {
       setErrorMessages('')
     }
@@ -28,11 +28,11 @@ const Thema = () => {
 
   const handleClick = async () => {
     if (game.thema.length === 0) {
-      setErrorMessages('テーマを入力してください')
+      setErrorMessages('Please enter a theme')
       return
     }
     if (game.thema.length > 25) {
-      setErrorMessages('テーマは25文字以内で入力してください')
+      setErrorMessages('Please enter a theme using 25 characters or less')
       return
     }
     try {
@@ -61,8 +61,8 @@ const Thema = () => {
     } catch (e) {
       console.error(e)
       toast({
-        title: 'エラーが発生しました',
-        description: 'テーマに問題がある可能性があります',
+        title: 'Error',
+        description: 'Failed to generate text',
         variant: 'destructive'
       })
       setGame((prev) => ({ ...prev, status: 'input' }))
@@ -70,12 +70,12 @@ const Thema = () => {
   }
   return (
     <>
-      <h1 className="text-center text-2xl font-bold">テーマを入力してください</h1>
+      <h1 className="text-center text-2xl font-bold">Enter a Theme</h1>
       <div className="w-full">
         {errorMessages && <p className="text-red-500">{errorMessages}</p>}
         <Input
           ref={inputRef}
-          placeholder="例: アニメの名言"
+          placeholder="e.g., Movie Quotes, Sports Trivia, Famous Lyrics"
           className="text-xl shadow"
           value={game.thema}
           onChange={handleChange}
@@ -92,21 +92,21 @@ const Thema = () => {
         {game.status === 'creating' ? (
           <div className="flex">
             <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
-            生成中
+            Creating...
           </div>
         ) : (
-          'スタート'
+          'Create'
         )}
       </Button>
 
       <div>
-        <p>※テーマの内容によってはうまくAIが生成できないことがあります</p>
+        <p>* Please note that the AI may not always generate suitable content depending on the theme.</p>{' '}
         <p>
-          ※ゲームの詳細なルールは
+          * For detailed game rules and instructions, please see the{' '}
           <Link href={`/about/play`} className="underline">
-            遊び方
-          </Link>
-          をご覧ください
+            How to Play
+          </Link>{' '}
+          section.
         </p>
       </div>
     </>
