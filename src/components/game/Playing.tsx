@@ -22,7 +22,7 @@ const Playing = () => {
   const { score, text } = game
   return (
     <div className="max-md:pt-20">
-      <div className="absolute top-10 right-1/2 translate-x-1/2 text-xl text-gray-500">テーマ「{game.thema}」</div>
+      <div className="absolute top-10 right-1/2 translate-x-1/2 text-xl text-gray-500">「{game.thema}」</div>
       <div className="absolute top-5 right-5 max-md:hidden">
         <Score score={score} />
       </div>
@@ -36,12 +36,12 @@ const Playing = () => {
       <div className="absolute bottom-10 right-1/2 translate-x-1/2 flex gap-10 justify-center items-center max-md:hidden">
         <Timer timeMiliSec={TimeMiliSec} />
         <div>
-          <span className="mr-2">タイプ数</span>
-          <span className="text-3xl text-blue-500">{totalInput.length}</span>
-        </div>
+          {' '}
+          <span className="mr-2">Keystrokes</span> <span className="text-3xl text-blue-500">{totalInput.length}</span>{' '}
+        </div>{' '}
         <div>
-          <span className="mr-2">ミスタイプ数</span>
-          <span className="text-3xl text-red-500">{game.missTypeNum}</span>
+          {' '}
+          <span className="mr-2">Typos</span> <span className="text-3xl text-red-500">{game.missTypeNum}</span>{' '}
         </div>
       </div>
       {/* 文章の表示 */}

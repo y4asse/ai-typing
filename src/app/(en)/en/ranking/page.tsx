@@ -19,9 +19,9 @@ const getRanking = async () => {
 const Page = () => {
   const query = useQuery({ queryKey: ['ranking'], queryFn: getRanking })
   return (
-    <div className="pb-10">
+    <div className="pb-10 min-h-screen">
       <WidthContainer>
-        <h1 className="text-3xl text-center">ランキングTOP10</h1>
+        <h1 className="text-3xl text-center">Ranking TOP10</h1>
         <div className="my-10">
           {query.isLoading ? (
             <Spinner />
@@ -30,17 +30,17 @@ const Page = () => {
               <Table className="text-xl text-center rounded-2xl border">
                 {query.data.map((data, index) => {
                   const date = new Date(data.created_at)
-                  const jst = date.toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })
-                  // 秒を消す
-                  const displayJst = jst.replace(/:\d{2}$/, '') // $は末尾を表す
+                  const utc = date.toUTCString()
+                  //日付のみ
+                  const displayUtc = utc.split(' ').slice(0, 4).join(' ')
                   if (index === 0)
                     return (
                       <TableBody key={index} className="bg-gray-100 text-3xl font-bold ">
                         <TableRow>
-                          <TableCell className="w-1/4 text-yellow-400">{index + 1}位</TableCell>
-                          <TableCell className="w-1/4">{data.user_name ?? '名無し'}</TableCell>
-                          <TableCell className="w-1/4">{data.score} 点</TableCell>
-                          <TableCell className="w-1/4">{displayJst}</TableCell>
+                          <TableCell className="w-1/4 text-yellow-400">{index + 1}</TableCell>
+                          <TableCell className="w-1/4">{data.user_name ?? 'Guest'}</TableCell>
+                          <TableCell className="w-1/4">{data.score} points</TableCell>
+                          <TableCell className="w-1/4">{displayUtc}</TableCell>
                         </TableRow>
                       </TableBody>
                     )
@@ -48,10 +48,10 @@ const Page = () => {
                     return (
                       <TableBody key={index} className="bg-gray-100 text-2xl font-semibold ">
                         <TableRow>
-                          <TableCell className="w-1/4 text-gray-500">{index + 1}位</TableCell>
-                          <TableCell className="w-1/4">{data.user_name ?? '名無し'}</TableCell>
-                          <TableCell className="w-1/4">{data.score} 点</TableCell>
-                          <TableCell className="w-1/4">{displayJst}</TableCell>
+                          <TableCell className="w-1/4 text-gray-500">{index + 1}</TableCell>
+                          <TableCell className="w-1/4">{data.user_name ?? 'Guest'}</TableCell>
+                          <TableCell className="w-1/4">{data.score} points</TableCell>
+                          <TableCell className="w-1/4">{displayUtc}</TableCell>
                         </TableRow>
                       </TableBody>
                     )
@@ -59,20 +59,20 @@ const Page = () => {
                     return (
                       <TableBody key={index} className="bg-gray-100 text-2xl font-semibold ">
                         <TableRow>
-                          <TableCell className="w-1/4 text-orange-800">{index + 1}位</TableCell>
-                          <TableCell className="w-1/4">{data.user_name ?? '名無し'}</TableCell>
-                          <TableCell className="w-1/4">{data.score} 点</TableCell>
-                          <TableCell className="w-1/4">{displayJst}</TableCell>
+                          <TableCell className="w-1/4 text-orange-800">{index + 1}</TableCell>
+                          <TableCell className="w-1/4">{data.user_name ?? 'Guest'}</TableCell>
+                          <TableCell className="w-1/4">{data.score} points</TableCell>
+                          <TableCell className="w-1/4">{displayUtc}</TableCell>
                         </TableRow>
                       </TableBody>
                     )
                   return (
                     <TableBody key={index}>
                       <TableRow>
-                        <TableCell className="w-1/4">{index + 1}位</TableCell>
-                        <TableCell className="w-1/4">{data.user_name ?? '名無し'}</TableCell>
-                        <TableCell className="w-1/4">{data.score} 点</TableCell>
-                        <TableCell className="w-1/4">{displayJst}</TableCell>
+                        <TableCell className="w-1/4">{index + 1}</TableCell>
+                        <TableCell className="w-1/4">{data.user_name ?? 'Guest'}</TableCell>
+                        <TableCell className="w-1/4">{data.score} points</TableCell>
+                        <TableCell className="w-1/4">{displayUtc}</TableCell>
                       </TableRow>
                     </TableBody>
                   )
@@ -80,7 +80,9 @@ const Page = () => {
               </Table>
             </div>
           ) : (
-            <div className="text-center">エラーが発生しました</div>
+            <div className="text-center">
+              <p>Error occurred. Please try again later.</p>
+            </div>
           )}
         </div>
       </WidthContainer>

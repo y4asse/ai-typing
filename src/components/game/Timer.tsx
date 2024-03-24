@@ -7,7 +7,7 @@ const Timer = memo(({ timeMiliSec }: { timeMiliSec: number }) => {
     <div>
       <MdOutlineTimer className="inline text-xl mr-2 mb-2" />
       <span className="text-3xl text-blue-500">{timeSec}</span>
-      <span>秒</span>
+      <span>s</span>
     </div>
   )
 })

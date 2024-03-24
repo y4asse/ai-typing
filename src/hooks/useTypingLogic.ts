@@ -80,6 +80,7 @@ const useTypingLogic = () => {
 
   const handleInput = (e: KeyboardEvent) => {
     //終了後
+    e.preventDefault()
     if (textIndex > text.length - 1) {
       return
     }

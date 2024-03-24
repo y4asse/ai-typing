@@ -3,7 +3,7 @@ import React from 'react'
 const Page = () => {
   return (
     <div className="container">
-      <div className="">
+      <div className="pb-20">
         <h1 className="text-4xl font-bold">遊び方</h1>
         <p className="mt-5 text-gray-500">AI Typingの遊び方について説明します。</p>
         <div className="mt-10">
