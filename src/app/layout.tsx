@@ -72,7 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="">
               {/* <GlobalMenu /> */}
               {/* 200pxはフッター、70pxはヘッダー */}
-              <main className="min-h-[calc(100vh-200px)] pt-[calc(70px+60px)]">{children}</main>
+              <main className="min-h-[calc(100vh-200px)]">{children}</main>
             </div>
             <Toaster />
             <SonnerToaster />

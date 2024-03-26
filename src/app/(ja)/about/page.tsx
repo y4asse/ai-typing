@@ -6,7 +6,7 @@ const Page = () => {
   return (
     <div className="min-h-screen">
       <div className="container mx-auto px-4 pb-16">
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center max-md:flex-col">
           <div>
             <Logo className="mx-auto" />
             <p className="text-xl my-12 md:max-w-3xl">
@@ -14,7 +14,7 @@ const Page = () => {
               Typingは、文章作成AIを駆使した革新的なタイピングゲームです。ユーザーが入力したテーマに基づいて、AIが唯一無二の文章を生成。あなただけのオリジナル文章でタイピング練習ができます。初心者から上級者まで、楽しみながらスキルアップを目指せる、新世代のタイピングアプリです。
             </p>
           </div>
-          <TypingAnimation className="w-[500px]" />
+          <TypingAnimation className="w-[500px] max-md:w-[300px]" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
