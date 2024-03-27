@@ -37,14 +37,20 @@ const Thema = () => {
     }
     try {
       setGame((prev) => ({ ...prev, status: 'creating' }))
-      const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/aiText`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ thema: game.thema, model: 'gpt-3.5-turbo', lang: 'en' }),
-        cache: 'no-cache'
-      })
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/aiText?${new URLSearchParams({
+          theme: game.thema,
+          model: 'gpt-3.5-turbo',
+          lang: 'en'
+        })}`,
+        {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          cache: 'no-cache'
+        }
+      )
       if (!res.ok) {
         console.log(res.statusText)
         throw new Error('[response error]' + res.statusText)
