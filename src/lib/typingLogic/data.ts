@@ -5182,6 +5182,18 @@ const data = {
       TypePattern: ['-']
     },
     {
+      Pattern: '～',
+      TypePattern: ['-']
+    },
+    {
+      Pattern: '」',
+      TypePattern: [']']
+    },
+    {
+      Pattern: '「',
+      TypePattern: ['[']
+    },
+    {
       Pattern: '、',
       TypePattern: [',']
     },
